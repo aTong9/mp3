@@ -1,0 +1,72 @@
+/* ========================================
+   Whisper ASMR - Global Styles
+   ======================================== */
+
+:root {
+  --bg: #0a0a0f;
+  --bg2: #111118;
+  --card: #18181f;
+  --card-hover: #1e1e28;
+  --border: #222230;
+  --text: #e8e8f0;
+  --text2: #8888a0;
+  --text3: #555570;
+  --accent: #7c6ff7;
+  --accent-glow: rgba(124,111,247,0.3);
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { font-size: 16px; -webkit-font-smoothing: antialiased; }
+
+body {
+  font-family: 'Inter', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg); color: var(--text);
+  min-height: 100vh; overflow-x: hidden; line-height: 1.5;
+}
+
+#app { min-height: 100vh; }
+
+/* 背景氛围 */
+.bg-ambient {
+  position: fixed; inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(124,111,247,0.04) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(96,165,250,0.03) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 80%, rgba(74,222,128,0.02) 0%, transparent 50%);
+  pointer-events: none; z-index: 0;
+}
+
+/* 主内容区 */
+.main-content {
+  position: relative; z-index: 1;
+  padding: 24px 24px 220px;
+  max-width: 1100px; margin: 0 auto;
+}
+
+/* Toast */
+.toast-container {
+  position: fixed; top: 80px; right: 20px; z-index: 300;
+  display: flex; flex-direction: column; gap: 8px; pointer-events: none;
+}
+.toast-item {
+  padding: 10px 18px; background: var(--bg2); border: 1px solid var(--border);
+  border-radius: 10px; color: var(--text); font-size: 0.825rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+  animation: toast-in 0.3s ease-out;
+  pointer-events: auto;
+}
+@keyframes toast-in {
+  from { opacity: 0; transform: translateX(16px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* 滚动条 */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #333348; }
+
+/* 响应式 */
+@media (max-width: 768px) {
+  .main-content { padding: 16px 14px 200px; }
+}
