@@ -1,0 +1,19 @@
+{
+  "name": "whisper-asmr-server",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "generate": "tsx src/generate.ts",
+    "schedule": "tsx src/scheduler.ts",
+    "generate:all": "tsx src/generate.ts --all"
+  },
+  "dependencies": {
+    "node-cron": "^3.0.3"
+  },
+  "devDependencies": {
+    "tsx": "^4.7.0",
+    "typescript": "^5.4.0",
+    "@types/node": "^20.11.0",
+    "@types/node-cron": "^3.0.11"
+  }
+}
